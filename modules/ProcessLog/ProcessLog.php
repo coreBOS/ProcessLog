@@ -50,7 +50,8 @@ class ProcessLog extends CRMEntity {
 	public $list_fields = array(
 		/* Format: Field Label => array(tablename => columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'ProcessLog Name'=> array('processlog' => 'processlogname'),
+		'processlog_no'=> array('processlog' => 'processlog_no'),
+		'relatedflow'=> array('processlog' => 'relatedflow'),
 		'Previous Substatus' => array('processlog' => 'previoussubstatus'),
 		'Next Substatus' => array('processlog' => 'nextsubstatus'),
 		'Date Time' => array('processlog' => 'dtime'),
@@ -58,7 +59,8 @@ class ProcessLog extends CRMEntity {
 	);
 	public $list_fields_name = array(
 		/* Format: Field Label => fieldname */
-		'ProcessLog Name'=> 'processlogname',
+		'processlog_no'=> 'processlog_no',
+		'relatedflow'=> 'relatedflow',
 		'Previous Substatus' => 'previoussubstatus',
 		'Next Substatus' => 'nextsubstatus',
 		'Date Time' => 'dtime',
@@ -72,14 +74,16 @@ class ProcessLog extends CRMEntity {
 	public $search_fields = array(
 		/* Format: Field Label => array(tablename => columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'ProcessLog Name'=> array('processlog' => 'processlogname'),
+		'processlog_no'=> array('processlog' => 'processlog_no'),
+		'relatedflow'=> array('processlog' => 'relatedflow'),
 		'Previous Substatus' => array('processlog' => 'previoussubstatus'),
 		'Next Substatus' => array('processlog' => 'nextsubstatus'),
 		'Date Time' => array('processlog' => 'dtime'),
 	);
 	public $search_fields_name = array(
 		/* Format: Field Label => fieldname */
-		'ProcessLog Name'=> 'processlogname',
+		'processlog_no'=> 'processlog_no',
+		'relatedflow'=> 'relatedflow',
 		'Previous Substatus' => 'previoussubstatus',
 		'Next Substatus' => 'nextsubstatus',
 		'Date Time' => 'dtime',
@@ -123,7 +127,7 @@ class ProcessLog extends CRMEntity {
 	public function vtlib_handler($modulename, $event_type) {
 		if ($event_type == 'module.postinstall') {
 			// TODO Handle post installation actions
-			$this->setModuleSeqNumber('configure', $modulename, $modulename.'-', '0000001');
+			$this->setModuleSeqNumber('configure', $modulename, 'bpmlog-', '000000001');
 		} elseif ($event_type == 'module.disabled') {
 			// TODO Handle actions when this module is disabled.
 		} elseif ($event_type == 'module.enabled') {

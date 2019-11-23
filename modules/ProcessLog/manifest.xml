@@ -34,6 +34,7 @@
 <name>vtiger_processlog</name>
 <sql><![CDATA[CREATE TABLE `vtiger_processlog` (
   `processlogid` int(11) default NULL,
+  `relatedflow` int(11) default NULL,
   `processlog_no` varchar(56) default NULL,
   `processlogname` varchar(155) default NULL,
   `previoussubstatus` varchar(255) default NULL,
@@ -58,12 +59,12 @@
 <label>LBL_PROCESSLOG_INFORMATION</label>
 <fields>
 <field>
-<fieldname>processlog_no</fieldname>
+<fieldname>relatedflow</fieldname>
 <uitype>4</uitype>
-<columnname>processlog_no</columnname>
+<columnname>relatedflow</columnname>
 <tablename>vtiger_processlog</tablename>
 <generatedtype>1</generatedtype>
-<fieldlabel>processlog_no</fieldlabel>
+<fieldlabel>relatedflow</fieldlabel>
 <readonly>1</readonly>
 <presence>0</presence>
 <selected>0</selected>
@@ -76,22 +77,25 @@
 <info_type>BAS</info_type>
 <helpinfo><![CDATA[]]></helpinfo>
 <masseditable>1</masseditable>
+<relatedmodules>
+<relatedmodule>cbProcessFlow</relatedmodule>
+</relatedmodules>
 </field>
 <field>
-<fieldname>processlogname</fieldname>
-<uitype>1</uitype>
-<columnname>processlogname</columnname>
+<fieldname>processlog_no</fieldname>
+<uitype>4</uitype>
+<columnname>processlog_no</columnname>
 <tablename>vtiger_processlog</tablename>
 <generatedtype>1</generatedtype>
-<fieldlabel>ProcessLog Name</fieldlabel>
+<fieldlabel>processlog_no</fieldlabel>
 <readonly>1</readonly>
-<presence>2</presence>
-<defaultvalue></defaultvalue>
+<presence>0</presence>
+<selected>0</selected>
 <sequence>2</sequence>
 <maximumlength>100</maximumlength>
-<typeofdata>V~O</typeofdata>
-<quickcreate>1</quickcreate>
-<quickcreatesequence></quickcreatesequence>
+<typeofdata>V~M</typeofdata>
+<quickcreate>0</quickcreate>
+<quickcreatesequence>0</quickcreatesequence>
 <displaytype>1</displaytype>
 <info_type>BAS</info_type>
 <helpinfo><![CDATA[]]></helpinfo>
@@ -111,7 +115,27 @@
 <readonly>1</readonly>
 <presence>2</presence>
 <defaultvalue></defaultvalue>
-<sequence>2</sequence>
+<sequence>3</sequence>
+<maximumlength>100</maximumlength>
+<typeofdata>V~O</typeofdata>
+<quickcreate>1</quickcreate>
+<quickcreatesequence></quickcreatesequence>
+<displaytype>1</displaytype>
+<info_type>BAS</info_type>
+<helpinfo><![CDATA[]]></helpinfo>
+<masseditable>1</masseditable>
+</field>
+<field>
+<fieldname>processlogname</fieldname>
+<uitype>1</uitype>
+<columnname>processlogname</columnname>
+<tablename>vtiger_processlog</tablename>
+<generatedtype>1</generatedtype>
+<fieldlabel>ProcessLog Name</fieldlabel>
+<readonly>1</readonly>
+<presence>2</presence>
+<defaultvalue></defaultvalue>
+<sequence>4</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>V~O</typeofdata>
 <quickcreate>1</quickcreate>
@@ -131,29 +155,9 @@
 <readonly>1</readonly>
 <presence>2</presence>
 <defaultvalue></defaultvalue>
-<sequence>2</sequence>
+<sequence>5</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>V~O</typeofdata>
-<quickcreate>1</quickcreate>
-<quickcreatesequence></quickcreatesequence>
-<displaytype>1</displaytype>
-<info_type>BAS</info_type>
-<helpinfo><![CDATA[]]></helpinfo>
-<masseditable>1</masseditable>
-</field>
-<field>
-<fieldname>dtime</fieldname>
-<uitype>50</uitype>
-<columnname>dtime</columnname>
-<tablename>vtiger_processlog</tablename>
-<generatedtype>1</generatedtype>
-<fieldlabel>Date Time</fieldlabel>
-<readonly>1</readonly>
-<presence>2</presence>
-<defaultvalue></defaultvalue>
-<sequence>2</sequence>
-<maximumlength>100</maximumlength>
-<typeofdata>DT~M</typeofdata>
 <quickcreate>1</quickcreate>
 <quickcreatesequence></quickcreatesequence>
 <displaytype>1</displaytype>
@@ -171,11 +175,31 @@
 <readonly>1</readonly>
 <presence>0</presence>
 <selected>0</selected>
-<sequence>10</sequence>
+<sequence>6</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>V~M</typeofdata>
 <quickcreate>1</quickcreate>
 <quickcreatesequence>1</quickcreatesequence>
+<displaytype>1</displaytype>
+<info_type>BAS</info_type>
+<helpinfo><![CDATA[]]></helpinfo>
+<masseditable>1</masseditable>
+</field>
+<field>
+<fieldname>dtime</fieldname>
+<uitype>50</uitype>
+<columnname>dtime</columnname>
+<tablename>vtiger_processlog</tablename>
+<generatedtype>1</generatedtype>
+<fieldlabel>Date Time</fieldlabel>
+<readonly>1</readonly>
+<presence>2</presence>
+<defaultvalue></defaultvalue>
+<sequence>7</sequence>
+<maximumlength>100</maximumlength>
+<typeofdata>DT~M</typeofdata>
+<quickcreate>1</quickcreate>
+<quickcreatesequence></quickcreatesequence>
 <displaytype>1</displaytype>
 <info_type>BAS</info_type>
 <helpinfo><![CDATA[]]></helpinfo>
@@ -191,7 +215,7 @@
 <readonly>1</readonly>
 <presence>0</presence>
 <selected>0</selected>
-<sequence>12</sequence>
+<sequence>8</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>DT~O</typeofdata>
 <quickcreate>3</quickcreate>
@@ -211,7 +235,7 @@
 <readonly>1</readonly>
 <presence>0</presence>
 <selected>0</selected>
-<sequence>13</sequence>
+<sequence>9</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>DT~O</typeofdata>
 <quickcreate>3</quickcreate>
@@ -263,7 +287,7 @@
 <columnindex>0</columnindex>
 </field>
 <field>
-<fieldname>processlogname</fieldname>
+<fieldname>relatedflow</fieldname>
 <columnindex>1</columnindex>
 </field>
 <field>
@@ -277,6 +301,10 @@
 <field>
 <fieldname>dtime</fieldname>
 <columnindex>4</columnindex>
+</field>
+<field>
+<fieldname>processlogname</fieldname>
+<columnindex>5</columnindex>
 </field>
 </fields>
 </customview>
