@@ -22,5 +22,6 @@ $mod_strings = array(
 	'Next Substatus' => 'Estado Siguiente',
 	'Date Time' => 'Tiempo',
 	'relatedflow' => 'Proceso Relacionado',
+	'relatedstep' => 'Paso Relacionado',
 );
 ?>

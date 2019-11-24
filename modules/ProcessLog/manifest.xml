@@ -35,6 +35,7 @@
 <sql><![CDATA[CREATE TABLE `vtiger_processlog` (
   `processlogid` int(11) default NULL,
   `relatedflow` int(11) default NULL,
+  `relatedstep` int(11) default NULL,
   `processlog_no` varchar(56) default NULL,
   `processlogname` varchar(155) default NULL,
   `previoussubstatus` varchar(255) default NULL,
@@ -60,7 +61,7 @@
 <fields>
 <field>
 <fieldname>relatedflow</fieldname>
-<uitype>4</uitype>
+<uitype>10</uitype>
 <columnname>relatedflow</columnname>
 <tablename>vtiger_processlog</tablename>
 <generatedtype>1</generatedtype>
@@ -106,24 +107,27 @@
 </entityidentifier>
 </field>
 <field>
-<fieldname>previoussubstatus</fieldname>
-<uitype>1</uitype>
-<columnname>previoussubstatus</columnname>
+<fieldname>relatedstep</fieldname>
+<uitype>10</uitype>
+<columnname>relatedstep</columnname>
 <tablename>vtiger_processlog</tablename>
 <generatedtype>1</generatedtype>
-<fieldlabel>Previous Substatus</fieldlabel>
+<fieldlabel>relatedstep</fieldlabel>
 <readonly>1</readonly>
-<presence>2</presence>
-<defaultvalue></defaultvalue>
+<presence>0</presence>
+<selected>0</selected>
 <sequence>3</sequence>
 <maximumlength>100</maximumlength>
-<typeofdata>V~O</typeofdata>
-<quickcreate>1</quickcreate>
-<quickcreatesequence></quickcreatesequence>
+<typeofdata>V~M</typeofdata>
+<quickcreate>0</quickcreate>
+<quickcreatesequence>0</quickcreatesequence>
 <displaytype>1</displaytype>
 <info_type>BAS</info_type>
 <helpinfo><![CDATA[]]></helpinfo>
 <masseditable>1</masseditable>
+<relatedmodules>
+<relatedmodule>cbProcessStep</relatedmodule>
+</relatedmodules>
 </field>
 <field>
 <fieldname>processlogname</fieldname>
@@ -146,12 +150,12 @@
 <masseditable>1</masseditable>
 </field>
 <field>
-<fieldname>nextsubstatus</fieldname>
+<fieldname>previoussubstatus</fieldname>
 <uitype>1</uitype>
-<columnname>nextsubstatus</columnname>
+<columnname>previoussubstatus</columnname>
 <tablename>vtiger_processlog</tablename>
 <generatedtype>1</generatedtype>
-<fieldlabel>Next Substatus</fieldlabel>
+<fieldlabel>Previous Substatus</fieldlabel>
 <readonly>1</readonly>
 <presence>2</presence>
 <defaultvalue></defaultvalue>
@@ -186,18 +190,18 @@
 <masseditable>1</masseditable>
 </field>
 <field>
-<fieldname>dtime</fieldname>
-<uitype>50</uitype>
-<columnname>dtime</columnname>
+<fieldname>nextsubstatus</fieldname>
+<uitype>1</uitype>
+<columnname>nextsubstatus</columnname>
 <tablename>vtiger_processlog</tablename>
 <generatedtype>1</generatedtype>
-<fieldlabel>Date Time</fieldlabel>
+<fieldlabel>Next Substatus</fieldlabel>
 <readonly>1</readonly>
 <presence>2</presence>
 <defaultvalue></defaultvalue>
 <sequence>7</sequence>
 <maximumlength>100</maximumlength>
-<typeofdata>DT~M</typeofdata>
+<typeofdata>V~O</typeofdata>
 <quickcreate>1</quickcreate>
 <quickcreatesequence></quickcreatesequence>
 <displaytype>1</displaytype>
@@ -226,6 +230,26 @@
 <masseditable>0</masseditable>
 </field>
 <field>
+<fieldname>dtime</fieldname>
+<uitype>50</uitype>
+<columnname>dtime</columnname>
+<tablename>vtiger_processlog</tablename>
+<generatedtype>1</generatedtype>
+<fieldlabel>Date Time</fieldlabel>
+<readonly>1</readonly>
+<presence>2</presence>
+<defaultvalue></defaultvalue>
+<sequence>9</sequence>
+<maximumlength>100</maximumlength>
+<typeofdata>DT~M</typeofdata>
+<quickcreate>1</quickcreate>
+<quickcreatesequence></quickcreatesequence>
+<displaytype>1</displaytype>
+<info_type>BAS</info_type>
+<helpinfo><![CDATA[]]></helpinfo>
+<masseditable>1</masseditable>
+</field>
+<field>
 <fieldname>modifiedtime</fieldname>
 <uitype>70</uitype>
 <columnname>modifiedtime</columnname>
@@ -235,7 +259,7 @@
 <readonly>1</readonly>
 <presence>0</presence>
 <selected>0</selected>
-<sequence>9</sequence>
+<sequence>10</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>DT~O</typeofdata>
 <quickcreate>3</quickcreate>
