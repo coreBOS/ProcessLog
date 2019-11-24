@@ -33,7 +33,7 @@
 <table>
 <name>vtiger_processlog</name>
 <sql><![CDATA[CREATE TABLE `vtiger_processlog` (
-  `processlogid` int(11) default NULL,
+  `processlogid` int(11) NOT NULL,
   `relatedflow` int(11) default NULL,
   `relatedstep` int(11) default NULL,
   `processlog_no` varchar(56) default NULL,
