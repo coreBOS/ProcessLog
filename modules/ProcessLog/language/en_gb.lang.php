@@ -14,7 +14,7 @@ $mod_strings = array(
 	'ProcessLog ID' => 'Process Log ID',
 
 	'LBL_CUSTOM_INFORMATION' => 'Custom Information',
-	'LBL_ProcessLog_INFORMATION' => 'Process Log Information',
+	'LBL_PROCESSLOG_INFORMATION' => 'Process Log Information',
 	'LBL_DESCRIPTION_INFORMATION' => 'Description',
 	'processlog_no' => 'Log No',
 	'ProcessLog Name' => 'Log Name',

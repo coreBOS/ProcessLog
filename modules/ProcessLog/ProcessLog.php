@@ -68,7 +68,7 @@ class ProcessLog extends CRMEntity {
 	);
 
 	// Make the field link to detail view from list view (Fieldname)
-	public $list_link_field = 'processlogname';
+	public $list_link_field = 'processlog_no';
 
 	// For Popup listview and UI type support
 	public $search_fields = array(
@@ -90,24 +90,24 @@ class ProcessLog extends CRMEntity {
 	);
 
 	// For Popup window record selection
-	public $popup_fields = array('processlogname');
+	public $popup_fields = array('processlog_no');
 
 	// Placeholder for sort fields - All the fields will be initialized for Sorting through initSortFields
 	public $sortby_fields = array();
 
 	// For Alphabetical search
-	public $def_basicsearch_col = 'processlogname';
+	public $def_basicsearch_col = 'processlog_no';
 
 	// Column value to use on detail view record text display
-	public $def_detailview_recname = 'processlogname';
+	public $def_detailview_recname = 'processlog_no';
 
 	// Required Information for enabling Import feature
-	public $required_fields = array('processlogname'=>1);
+	public $required_fields = array('processlog_no'=>1);
 
 	// Callback function list during Importing
 	public $special_functions = array('set_import_assigned_user');
 
-	public $default_order_by = 'processlogname';
+	public $default_order_by = 'processlog_no';
 	public $default_sort_order='ASC';
 	// Used when enabling/disabling the mandatory fields for the module.
 	// Refers to vtiger_field.fieldname values.
