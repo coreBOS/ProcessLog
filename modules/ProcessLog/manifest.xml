@@ -127,6 +127,7 @@
 <masseditable>1</masseditable>
 <relatedmodules>
 <relatedmodule>cbProcessStep</relatedmodule>
+<relatedmodule>cbProcessAlert</relatedmodule>
 </relatedmodules>
 </field>
 <field>
