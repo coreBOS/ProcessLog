@@ -17,11 +17,11 @@ $mod_strings = array(
 	'LBL_ProcessLog_INFORMATION' => 'Informazione Log',
 	'LBL_DESCRIPTION_INFORMATION' => 'Descrizione',
 	'processlog_no' => 'Nº Log',
-	'ProcessLog Name' => 'Nombre Log',
-	'Previous Substatus' => 'Estado Anterior',
-	'Next Substatus' => 'Estado Siguiente',
-	'Date Time' => 'Tiempo',
-	'relatedflow' => 'Related Flow',
-	'relatedstep' => 'Related Step',
+	'ProcessLog Name' => 'Nome Log',
+	'Previous Substatus' => 'Stato precedente',
+	'Next Substatus' => 'Stato successivo',
+	'Date Time' => 'Data',
+	'relatedflow' => 'Flusso Relazionato',
+	'relatedstep' => 'Step Relazionato',
 );
 ?>
