@@ -11,9 +11,6 @@ require_once 'data/CRMEntity.php';
 require_once 'data/Tracker.php';
 
 class ProcessLog extends CRMEntity {
-	public $db;
-	public $log;
-
 	public $table_name = 'vtiger_processlog';
 	public $table_index= 'processlogid';
 	public $column_fields = array();
