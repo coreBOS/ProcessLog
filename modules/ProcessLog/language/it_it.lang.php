@@ -16,12 +16,12 @@ $mod_strings = array(
 	'LBL_CUSTOM_INFORMATION' => 'Informazione Personalizzata',
 	'LBL_ProcessLog_INFORMATION' => 'Informazione Log',
 	'LBL_DESCRIPTION_INFORMATION' => 'Descrizione',
-	'processlog_no' => 'Nº Log',
+	'processlog_no' => 'No Log',
 	'ProcessLog Name' => 'Nome Log',
-	'Previous Substatus' => 'Stato precedente',
-	'Next Substatus' => 'Stato successivo',
+	'Previous Substatus' => 'Sottostato precedente',
+	'Next Substatus' => 'Sottostato successivo',
 	'Date Time' => 'Data',
 	'relatedflow' => 'Flusso Relazionato',
-	'relatedstep' => 'Step Relazionato',
+	'relatedstep' => 'Passo Relazionato',
 );
 ?>
